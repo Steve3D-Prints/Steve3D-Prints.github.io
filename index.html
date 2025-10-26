@@ -6,51 +6,181 @@
     <title>Steve's 3D Prints</title>
     
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; background: #f4f4f4; margin: 0; padding: 20px; }
-        .container { max-width: 900px; margin: auto; background: #fff; padding: 20px; border-radius: 8px; }
-        h1, h2 { text-align: center; }
-        .item { border: 1px solid #ddd; margin-bottom: 20px; padding: 15px; border-radius: 5px; }
-        .item img { max-width: 100%; height: auto; border-radius: 5px; }
-        .buy-button {
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background: #2b2b2b; /* Dark grey background */
+            color: #eee; /* Light text */
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 960px;
+            margin: auto;
+            background: #3c3c3c; /* Lighter grey for content box */
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #555;
+            padding-bottom: 20px;
+        }
+        .header h1 {
+            color: #4e9af1; /* A nice blue for the title */
+            margin: 0;
+        }
+        .header p {
+            font-size: 1.1em;
+            color: #ccc;
+        }
+        
+        /* --- START: Social Button CSS --- */
+        .social-links {
+            padding-top: 15px; /* Adds some space above the buttons */
+            text-align: center; /* Keeps them centered */
+        }
+        .social-button {
             display: inline-block;
-            background-color: #007bff;
             color: #fff;
-            padding: 10px 15px;
+            padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
+            margin: 5px;
+            transition: opacity 0.2s;
+        }
+        .social-button:hover {
+            opacity: 0.8; /* Slight fade on hover */
+        }
+        .facebook {
+            background-color: #1877F2; /* Official Facebook blue */
+        }
+        .whatsapp {
+            background-color: #25D366; /* Official WhatsApp green */
+        }
+        /* --- END: Social Button CSS --- */
+        
+        .gallery {
+            display: grid;
+            /* This makes the grid responsive */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .item {
+            background: #444; /* Darker card background */
+            border: 1px solid #555;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        .item img {
+            width: 100%; /* Make image fill the card */
+            height: auto;
+            border-radius: 5px;
+            background: #555;
+        }
+        .item h2 {
+            color: #4e9af1;
             margin-top: 10px;
+            margin-bottom: 10px;
+        }
+        .item p {
+            font-size: 0.95em;
+            color: #ddd;
+        }
+        .buy-button {
+            display: block; /* Make button fill width */
+            background-color: #007bff;
+            color: #fff;
+            padding: 12px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 15px;
+            transition: background-color 0.2s;
+        }
+        .buy-button:hover {
+            background-color: #0056b3;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.9em;
+            color: #888;
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <h1>Welcome to Steve's 3D Prints</h1>
-        <p style="text-align: center;">Here is a gallery of my latest models and projects. You can buy the physical prints or .STL files from my shop!</p>
-
-        <div class="item">
-            <h2>Articulated Dragon Model</h2>
+        
+        <div class="header">
+            <h1>Steve's 3D Prints</h1>
+            <p>High-quality stands, cases, and custom prints, shipped to you.</p>
             
-            <img src="dragon.jpg" alt="Photo of a 3D printed dragon">
-            
-            <p>A fully articulated, print-in-place dragon. No supports needed! A perfect test for your printer.</p>
-            
-            <a href="https://your-shop.etsy.com/listing/12345" class="buy-button">
-                Buy on Etsy
-            </a>
-            <a href="https://your-name.gumroad.com/l/dragon" class="buy-button">
-                Get the .STL on Gumroad
-            </a>
+            <div class="social-links">
+                <a href="https://www.facebook.com/your-page-name" class="social-button facebook" target="_blank">
+                    Find me on Facebook
+                </a>
+                <a href="https://wa.me/1234567890" class="social-button whatsapp" target="_blank">
+                    Message me on WhatsApp
+                </a>
+            </div>
         </div>
 
-        <div class="item">
-            <h2>Custom Lithophane</h2>
-            <img src="litho.jpg" alt="A 3D printed lithophane">
-            <p>Custom-made lithophanes from your photos. A perfect, personalized gift.</p>
-            <a href="https://your-shop.etsy.com/listing/67890" class="buy-button">
-                Order a Custom Print
-            </a>
+        <div class="gallery">
+
+            <div class="item">
+                <h2>Whistler TRX-1 Stand</h2>
+                <img src="images/whistler-trx1-stand.png" alt="3D model of Whistler TRX-1 stand">
+                <p>A sturdy, custom-fit desk stand for the Whistler TRX-1 radio scanner. Designed for stability and easy viewing.</p>
+                <a href="#" class="buy-button">
+                    Buy This Print
+                </a>
+            </div>
+
+            <div class="item">
+                <h2>Uniden Scanner Stand</h2>
+                <img src="images/uniden-ubc125xlt-stand.png" alt="3D model of Uniden scanner stand">
+                <p>A versatile desk stand for Uniden scanners. Compatible with: UBC125XLT, BC125AT, BCD325P2, SR30C, and BC75XLT.</p>
+                <a href="#" class="buy-button">
+                    Buy This Print
+                </a>
+            </div>
+
+            <div class="item">
+                <h2>Pwnagotchi Case</h2>
+                <img src="images/pwnagotchi-case.png" alt="Pwnagotchi case">
+                <p>A durable, custom-fit case for your Pwnagotchi project. Protects your device while keeping all ports accessible.</p>
+                <a href="#" class="buy-button">
+                    Buy This Print
+                </a>
+            </div>
+
+            <div class="item">
+                <h2>Meshtastic Case</h2>
+                <img src="images/meshtastic-case.png" alt="Meshtastic case">
+                <p>A compact and rugged case for Meshtastic-enabled devices. Perfect for building your off-grid communication node.</p>
+                <a href="#" class="buy-button">
+                    Buy This Print
+                </a>
+            </div>
+
+            <div class="item">
+                <h2>Custom 3D Printing</h2>
+                <img src="images/custom-print.png" alt="Custom 3D print service">
+                <p>Have your own .STL file? I can print any file for the right price. Get a high-quality print in your choice of material and color.</p>
+                <a href="#" class="buy-button">
+                    Get a Quote for a Custom Print
+                </a>
+            </div>
+
+        </div> <div class="footer">
+            <p>&copy; 2025 Steve's 3D Prints. All rights reserved.</p>
         </div>
 
     </div>
