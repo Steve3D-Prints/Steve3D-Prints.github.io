@@ -59,15 +59,12 @@
             background-color: #25D366; /* Official WhatsApp green */
         }
         
-        /* --- START: Gallery CSS Update --- */
         .gallery {
             display: grid;
-            /* This creates a 2-column layout */
             grid-template-columns: 1fr 1fr;
             gap: 20px;
             margin-top: 20px;
         }
-        /* --- END: Gallery CSS Update --- */
 
         .item {
             background: #444; /* Darker card background */
@@ -75,21 +72,23 @@
             padding: 15px;
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
         }
         
-        /* --- START: New CSS for the wide item --- */
-        /* This makes the custom print item span both columns */
         #custom-print {
             grid-column: 1 / -1; /* Spans from the first to the last column line */
         }
-        /* --- END: New CSS for the wide item --- */
         
         .item img {
-            width: 100%; /* Make image fill the card */
-            height: auto;
+            width: 100%; 
+            height: 280px; /* --- This sets a fixed height --- */
+            object-fit: cover; /* --- This scales the image to fit, cropping not stretching --- */
             border-radius: 5px;
             background: #555;
+            overflow: hidden; /* --- This cleans up the edges --- */
         }
+        
         .item h2 {
             color: #4e9af1;
             margin-top: 10px;
@@ -98,9 +97,10 @@
         .item p {
             font-size: 0.95em;
             color: #ddd;
+            flex-grow: 1; /* Makes text boxes fill space */
         }
         .buy-button {
-            display: block; /* Make button fill width */
+            display: block; 
             background-color: #007bff;
             color: #fff;
             padding: 12px 15px;
@@ -142,7 +142,7 @@
                 <a href="https://www.facebook.com/profile.php?id=61568326011697" class="social-button facebook" target="_blank">
                     Find me on Facebook
                 </a>
-                <a href="https://wa.me/07710558996" class="social-button whatsapp" target="_blank">
+                <a href="https://wa.me/447710558996" class="social-button whatsapp" target="_blank">
                     Message me on WhatsApp
                 </a>
             </div>
