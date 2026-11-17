@@ -165,7 +165,14 @@
 
         <!-- Stands: black PLA body, choose letter colour -->
         <div id="standFields">
-            <div class="fixed-note">Stands are printed in <strong>black PLA</strong> as standard &mdash; just pick the colour for the lettering.</div>
+            <div class="fixed-note">Stands are printed in <strong>black PLA</strong> as standard &mdash; just pick where it'll live and the colour for the lettering.</div>
+            <label for="mount">Desk or car?</label>
+            <select id="mount">
+                <option>Desk stand</option>
+                <option>Car cup-holder mount</option>
+                <option>Both (cradle + desk base + car adapter)</option>
+                <option>Not sure &mdash; advise me</option>
+            </select>
             <label for="letterColour">Letter colour</label>
             <select id="letterColour">
                 <option>White</option>
@@ -238,14 +245,14 @@
         <p class="helper">This opens WhatsApp with your details filled in &mdash; just hit send. No payment is taken here; I'll confirm the price with you first.</p>
 
         <div class="footer">
-            <p>&copy; 2025 Steve's 3D Prints</p>
+            <p>&copy; 2026 Steve's 3D Prints</p>
         </div>
 
     </div>
 
     <script>
         // Your WhatsApp number in international format, no + or spaces
-        var WHATSAPP_NUMBER = "447710558996";
+        var WHATSAPP_NUMBER = "447345592701";
 
         function isStand(value) {
             return value.toLowerCase().indexOf("stand") !== -1;
@@ -295,6 +302,7 @@
 
             if (stand) {
                 lines.push("Material: Black PLA (body)");
+                lines.push("Mount: " + document.getElementById("mount").value);
                 lines.push("Letter colour: " + document.getElementById("letterColour").value);
             } else {
                 lines.push("Material: " + document.getElementById("material").value);
